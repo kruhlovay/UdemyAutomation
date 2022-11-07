@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-22T15:02:08 MSK" name="SearchTest" finished-at="2022-10-22T15:02:11 MSK" duration-ms="2067">
+    <groups>
+    </groups>
+    <test started-at="2022-10-22T15:02:08 MSK" name="Command line test" finished-at="2022-10-22T15:02:11 MSK" duration-ms="2067">
+      <class name="SearchTest">
+        <test-method signature="openGoogleChromeInChromeTest()[pri:0, instance:SearchTest@146044d7]" started-at="2022-10-22T15:02:09 MSK" name="openGoogleChromeInChromeTest" finished-at="2022-10-22T15:02:11 MSK" duration-ms="2028" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openGoogleChromeInChromeTest -->
+        <test-method signature="openGoogleComInChrome2Test()[pri:0, instance:SearchTest@146044d7]" started-at="2022-10-22T15:02:11 MSK" name="openGoogleComInChrome2Test" finished-at="2022-10-22T15:02:11 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openGoogleComInChrome2Test -->
+      </class> <!-- SearchTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- SearchTest -->
+</testng-results>

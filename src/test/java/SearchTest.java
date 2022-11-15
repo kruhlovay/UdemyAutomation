@@ -25,6 +25,7 @@ public class SearchTest {
         WebElement googleAppsButton = driver.findElement(By.cssSelector("div#gbwa a"));
         googleAppsButton.click();
 
+
         List<WebElement> imFeelingLucky = driver.findElements(By.xpath("//input[@name='btnI']"));
         imFeelingLucky.get(1).click();
         driver.quit();

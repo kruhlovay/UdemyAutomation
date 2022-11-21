@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.assertj.core.api.Assertions.*;
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 
 import java.io.File;
@@ -36,9 +38,9 @@ public class AssTest {
         System.out.println(resultRow.getAttribute("class"));
 
        assertThat (resultRow.getText().toLowerCase()).as("Test is not found").contains("selenium", "webdriver");
-        Assert.assertTrue(resultRow.isDisplayed(),"Element is not found");
-       Assert.assertEquals(resultRow.getText(), "WebDriver - Selenium", "Wrong text is shown");
-        Assert.assertEquals(resultRow.getAttribute("class"), "LC20lb MBeuO DKV0Md", "Wrong attribute text");
+        assertTrue(resultRow.isDisplayed(),"Element is not found");
+       assertEquals(resultRow.getText(), "WebDriver - Selenium", "Wrong text is shown");
+        assertEquals(resultRow.getAttribute("class"), "LC20lb MBeuO DKV0Md", "Wrong attribute text");
         //WebElement googleAppsButton = driver.findElement(By.cssSelector("div#gbwa a"));
         // googleAppsButton.click();
         // WebElement

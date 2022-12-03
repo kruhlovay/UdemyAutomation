@@ -3,20 +3,35 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import static org.testng.Assert.assertEquals;
 
 import java.io.File;
 import java.util.List;
 
 public class SearchTest {
-    @Test
-    public void openGoogleChromeInChromeTest() throws InterruptedException {
+    private WebDriver driver;
+    @BeforeMethod
+    public void setUp(){
         File file = new File("src/test/resources/chromedriver");
         System.setProperty("webdriver.chrome.driver",
                 file.getAbsolutePath());
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.navigate().to( "https://www.google.com/");
+    };
+
+    @AfterMethod
+    public void tearDown(){       driver.quit();
+    };
+   // @AfterMethod
+  //  public void goBack(){
+  //      driver.navigate().back();
+ //   }
+
+    @Test
+    public void openGoogleChromeInChromeTest() throws InterruptedException {
+      
         //driver.get("https://www.google.com/");
         driver.navigate().refresh();
         System.out.println(driver.getTitle());
@@ -34,7 +49,6 @@ public class SearchTest {
 
        // List<WebElement> imFeelingLucky = driver.findElements(By.xpath("//input[@name='btnI']"));
       //  imFeelingLucky.get(1).click();
-       driver.quit();
 
     }
 

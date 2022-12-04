@@ -4,10 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import steps.SearchSteps;
+import utils.Browser;
+import utils.DriverFactory;
+import utils.PropertyReader;
 
 import java.io.File;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 public abstract class BaseTest {
     private static WebDriver driver;
@@ -21,14 +31,16 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void setUp(){
-        File file = new File("src/test/resources/chromedriver");
-        System.setProperty("webdriver.chrome.driver",
-                file.getAbsolutePath());
-        driver = new ChromeDriver();
-        driver.navigate().to( "https://www.google.com/");
 
-        driver.manage().window().maximize();
+        driver = DriverFactory.getDriver(PropertyReader.getBrowser());
+        driver.navigate().to( PropertyReader.getUrl());
+
+
+
+       // driver.manage().window().maximize();
         WebElement searchField2 = driver.findElement(By.id("L2AGLb"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(searchField2 ));
         searchField2.click();
         steps = new SearchSteps();
     }

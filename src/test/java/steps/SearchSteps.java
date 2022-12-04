@@ -1,5 +1,6 @@
 package steps;
 
+
 import pages.SearchPage;
 
 public class SearchSteps {
@@ -8,6 +9,7 @@ public class SearchSteps {
        searchPage.fillSearchField(keyword);
        searchPage.pressEnter();
        Thread.sleep(3000);
+
        return new SearchResultsSteps();
    }
 

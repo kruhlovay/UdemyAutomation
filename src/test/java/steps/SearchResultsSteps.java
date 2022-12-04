@@ -14,4 +14,9 @@ public class SearchResultsSteps {
         searchResultPage.assertThatTopResultContainsPropertyAttributeText(text);
         return this;
 
-}}
+}
+public SearchResultsSteps headerCheck(){
+        searchResultPage.headerIsInvisible();
+        return this;
+}
+}

@@ -17,7 +17,8 @@ public class SearchTest extends BaseTest {
     public void openGoogleinChrome1(String text) throws InterruptedException {
     steps.executeSearchByKeyword(text)
             .verifyThatTopResultContainsCorrectText("the selenium browser automation project")
-            .verifyThatTopResultContainsProperAttributeText("LC20lb MBeuO DKV0Md");
+            .verifyThatTopResultContainsProperAttributeText("LC20lb MBeuO DKV0Md").headerCheck();
+
 
     }
 

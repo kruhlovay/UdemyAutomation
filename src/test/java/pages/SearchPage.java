@@ -9,6 +9,8 @@ public class SearchPage extends BasePage {
     @FindBy(name="q")
     private WebElement searchField;
 
+
+
    // WebElement searchField = driver.findElement(By.name("q"));
     public SearchPage() {
         super();
@@ -23,4 +25,5 @@ public class SearchPage extends BasePage {
         searchField.sendKeys(Keys.RETURN);
 
     }
+
 }
